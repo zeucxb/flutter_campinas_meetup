@@ -46,17 +46,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     try {
-      // final uri = Uri.http('localhost:8080', 'generate/$text');
-      // final response = await http.get(uri);
+      final uri = Uri.http('localhost:8080', 'generate/$text');
+      final response = await http.get(uri);
 
-      final uri = Uri.http('localhost:8080', 'generate');
-      final response = await http.post(
-        uri,
-        body: Picture(
-          text: text,
-          color: const ColorRGB(200, 50, 50),
-        ).toJson(),
-      );
+      // final uri = Uri.http('localhost:8080', 'generate');
+      // final response = await http.post(
+      //   uri,
+      //   body: Picture(
+      //     text: text,
+      //     color: const ColorRGB(200, 50, 50),
+      //   ).toJson(),
+      // );
 
       _imageUrl = response.body;
     } catch (_) {

@@ -16,16 +16,16 @@ void main() async {
     return Response.ok('http://$host:$port/$fileName');
   });
 
-  app.post('/generate', (Request request) async {
-    final body = await request.readAsString();
-    final Picture picture = Picture.fromJson(body);
+  // app.post('/generate', (Request request) async {
+  //   final body = await request.readAsString();
+  //   final Picture picture = Picture.fromJson(body);
 
-    final file =
-        customImage(picture.text, path: 'images/', color: picture.color);
-    final fileName = file.path.split('/').last;
+  //   final file =
+  //       customImage(picture.text, path: 'images/', color: picture.color);
+  //   final fileName = file.path.split('/').last;
 
-    return Response.ok('http://$host:$port/$fileName');
-  });
+  //   return Response.ok('http://$host:$port/$fileName');
+  // });
 
   final staticHandler = createStaticHandler('images', listDirectories: true);
 
